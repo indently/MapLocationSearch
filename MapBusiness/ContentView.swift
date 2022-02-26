@@ -16,7 +16,7 @@ struct ContentView: View {
       VStack {
          TextField("Enter an address", text: $text)
             .textFieldStyle(.roundedBorder)
-            .padding()
+            .padding(.horizontal)
          
          Button("Find address") {
             mapAPI.getLocation(address: text, delta: 0.5)
@@ -25,6 +25,7 @@ struct ContentView: View {
          Map(coordinateRegion: $mapAPI.region, annotationItems: mapAPI.locations) { location in
             MapMarker(coordinate: location.coordinate, tint: .blue)
          }
+         .ignoresSafeArea()
       }
    }
 }
