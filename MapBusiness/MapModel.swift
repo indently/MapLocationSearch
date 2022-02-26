@@ -15,11 +15,7 @@ struct Address: Codable {
 
 struct Datum: Codable {
    let latitude, longitude: Double
-   let type, name, number, postalCode: String?
-   let street: String?
-   let region, regionCode, county, locality: String?
-   let neighbourhood, country, countryCode, continent: String?
-   let label: String?
+   let name: String?
 }
 
 // Our Pin Locations
